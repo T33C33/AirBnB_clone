@@ -1,13 +1,11 @@
 #!/usr/bin/python3
 
+"""Module containing class BaseModel that 
+defines all common attributes/methods for other classes"""
+
+
 import uuid
 from datetime import datetime
-
-"""
-Module containing class BaseModel
-that defines all common attributes/methods for other classes
-"""
-
 
 class BaseModel:
     """Defines all common attributes/methods for other classes."""
