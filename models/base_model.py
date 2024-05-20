@@ -10,11 +10,21 @@ from datetime import datetime
 class BaseModel:
     """Defines all common attributes/methods for other classes."""
 
-    def __init__(self):
-        """To initialize an instance of BaseModel."""
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = self.created_at
+    def __init__(self, *args, **kwargs):
+        """ The instantiation of the BaseModel class """
+
+        if kwargs:
+            for key,value in kwargs.items():
+                if key == 'id':
+                    self.id = value
+                elif key == 'created_at':
+                    self.created_at = datetime.fromisoformat(value)
+                elif key == 'updated_at':
+                    self.updated_at = datetime.fromisoformat(value)
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """Always returns string representation of called instance."""
