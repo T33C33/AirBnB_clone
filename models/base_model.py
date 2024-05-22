@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""Module containing class BaseModel that 
+"""Module containing class BaseModel that
 defines all common attributes/methods for other classes"""
 
 
@@ -10,11 +10,12 @@ from datetime import datetime
 class BaseModel:
     """Defines all common attributes/methods for other classes."""
 
+
     def __init__(self, *args, **kwargs):
         """ The instantiation of the BaseModel class """
 
         if kwargs:
-            for key,value in kwargs.items():
+            for key, value in kwargs.items():
                 if key == 'id':
                     self.id = value
                 elif key == 'created_at':
