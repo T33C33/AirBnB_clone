@@ -4,6 +4,7 @@
 classes:
     TestBaseModel
 """
+import models
 import unittest
 from datetime import datetime, timedelta
 from unittest.mock import patch
