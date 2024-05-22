@@ -1,11 +1,17 @@
+#!/usr/bin/python3
+"""Test for base_models.
+
+classes:
+    TestBaseModel
+"""
 import unittest
 from datetime import datetime, timedelta
 from unittest.mock import patch
-
-from .models import BaseModel
+from models.base_model import BaseModel
 
 
 class TestBaseModel(unittest.TestCase):
+    """Unittest for the best model class"""
 
     def test_init_with_args(self):
         """Tests initialization with empty args and kwargs."""
