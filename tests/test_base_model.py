@@ -2,7 +2,7 @@ import unittest
 from datetime import datetime, timedelta
 from unittest.mock import patch
 
-from base_model import BaseModel
+from .models import BaseModel
 
 
 class TestBaseModel(unittest.TestCase):
