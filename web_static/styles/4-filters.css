@@ -23,6 +23,6 @@
     opacity: 1;
 }
 
-.button:hover{
+button:hover{
     opacity: 0.9;
 }
