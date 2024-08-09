@@ -55,8 +55,10 @@ class TestBaseModel(unittest.TestCase):
     def test_str(self):
         """Tests __str__ method representation."""
         this_base_model = BaseModel()
-        expected_str = f"[{this_base_model.__class__.__name__}] \
-            ({this_base_model.id}) {this_base_model.__dict__}"
+        class_name = this_base_model.__class__.__name__
+        instance_id = this_base_model.id
+        instance_dict = this_base_model.__dict__
+        expected_str = f"[{class_name}] ({instance_id}) {instance_dict}"
         self.assertEqual(str(this_base_model), expected_str)
 
     def test_save(self):
