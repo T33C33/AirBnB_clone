@@ -40,7 +40,7 @@ class TestFileStorage(unittest.TestCase):
 
     def test_all_storage_dict(self):
         """Test all method"""
-        self.assertIsEqual(dict, type(models.storage.all()))
+        self.assertEqual(dict, type(models.storage.all()))
 
     def test_new(self):
         """Test new method"""
@@ -82,12 +82,11 @@ class TestFileStorage(unittest.TestCase):
         models.storage.new(obj)
         models.storage.save()
         self.assertTrue(
-            os.path.exists(models.storage.__FileStorage__file_path))
+            os.path.exists(models.storage._FileStorage__file_path))
 
     def test_reload_file_empty(self):
         """test reload from empty file"""
         with self.assertRaises(TypeError):
-            models.storage()
             models.storage.reload()
 
 
