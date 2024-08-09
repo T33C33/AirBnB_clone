@@ -4,9 +4,9 @@
 classes:
     TestBaseModel
 """
-import models
+#import models
 import unittest
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from unittest.mock import patch
 from models.base_model import BaseModel
 
@@ -25,8 +25,8 @@ class TestBaseModel(unittest.TestCase):
     def test_init_with_kwargs(self):
         """Tests initialization with specific id, created_at, and updated_at."""
         test_id = "test-id"
-        test_created_at = datetime.utcnow() - timedelta(days=1)
-        test_updated_at = datetime.utcnow()
+        test_created_at = datetime.now(timezone.utc) - timedelta(days=1)
+        test_updated_at = datetime.now(timezone.utc)
 
         base_model = BaseModel(id=test_id, created_at=test_created_at.isoformat(), updated_at=test_updated_at.isoformat())
 
